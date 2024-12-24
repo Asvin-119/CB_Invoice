@@ -39,16 +39,34 @@
                         </div>
                     </div>
                     <div>
-                        <a href="{{ route('clients.create') }}" class="btn btn-info btn-icon-text">
+                        <button class="btn btn-info btn-icon-text" data-bs-toggle="modal" data-bs-target="#addClientModal">
                             <i class="mdi mdi-plus-circle"></i> Add
-                        </a>
+                        </button>
+
+                        @include('popup.clients_add')
                     </div>
                 </div>
                 <div class="card-body">
-                    @if (session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
+                    @if(session('success'))
+                        <script>
+                            // Trigger SweetAlert2 Toast on Form Submission Success
+                            const Toast = Swal.mixin({
+                                toast: true,
+                                position: "top-end",
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                    toast.addEventListener('mouseenter', Swal.stopTimer);
+                                    toast.addEventListener('mouseleave', Swal.resumeTimer);
+                                }
+                            });
+
+                            Toast.fire({
+                                icon: "success",
+                                title: "{{ session('success') }}"
+                            });
+                        </script>
                     @endif
 
                     <div class="table-responsive pt-2">
@@ -85,9 +103,13 @@
                                             <a href="{{ route('clients.show', $client->id) }}" class="btn btn-outline-info btn-sm" data-bs-toggle="tooltip" title="View">
                                                 <i class="fa fa-eye"></i>
                                             </a>
-                                            <a href="" class="btn btn-outline-danger btn-sm" data-bs-toggle="tooltip" title="Delete">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
+                                            <form action="{{ route('clients.delete', $client->id) }}" method="POST" style="display:inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-outline-danger btn-sm" data-bs-toggle="tooltip" title="Delete">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @empty
@@ -99,6 +121,7 @@
                         </table>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

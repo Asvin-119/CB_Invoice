@@ -83,7 +83,7 @@ class ClientController extends Controller
         // Save client data
         Client::create($data);
 
-        return redirect()->back()->with('success', 'Client added successfully!');
+        return redirect()->route('clients.create')->with('success', 'Client added successfully!');
     }
 
     public function show($id)
@@ -95,7 +95,27 @@ class ClientController extends Controller
         return view('partials._client.clients_overview', compact('client'));
     }
 
+    public function destroy($id)
+    {
+        $client = Client::findOrFail($id);
+        $client->delete();  // Soft delete the client
 
+        return redirect()->route('clients.index')->with('success', 'Client moved to deleted folder.');
+    }
+
+    public function trashed()
+    {
+        $clients = Client::onlyTrashed()->get();  // Retrieve soft-deleted clients
+        return view('trashed.clients_trashed', compact('clients'));
+    }
+
+    public function restore($id)
+    {
+        $client = Client::withTrashed()->findOrFail($id);
+        $client->restore();  // Restore the deleted client
+
+        return redirect()->route('clients.trashed')->with('success', 'Client restored successfully.');
+    }
 
     public function search(Request $request)
     {
@@ -114,5 +134,10 @@ class ClientController extends Controller
         return response()->json($clients);
     }
 
+    public function temp()
+    {
+        $clients = Client::all();
+        return view('partials._quotation.quotation', compact('clients'));
+    }
 
 }

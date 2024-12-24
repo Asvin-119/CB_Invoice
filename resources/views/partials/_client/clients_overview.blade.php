@@ -14,7 +14,7 @@
                     <table class="table table-borderless">
                         {{-- Client Image --}}
                         <tr>
-                            <td class="text-center"><h5><strong class="text-dark"><i class="fas fa-user-circle me-2"></i>Client Image:</strong></h5></td>
+                            <td class="text-center"><h5><strong class="text-dark">Profile</strong></h5></td>
                         </tr>
                         <tr>
                             <td class="text-center">
@@ -30,7 +30,7 @@
                 <div class="col-md-6 mb-4">
                     <table class="table table-borderless">
                         <tr>
-                            <td class="text-left"><h5><strong class="text-dark"><i class="fas fa-user me-2"></i>Client Details:</strong></h5></td>
+                            <td class="text-left"><h5><strong class="text-dark">Client Details</strong></h5></td>
                         </tr>
                         <tr>
                             <td><i class="fas fa-user me-2 text-muted"></i><strong>Client Name:</strong></td>

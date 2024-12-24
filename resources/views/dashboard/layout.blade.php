@@ -125,7 +125,7 @@
                             </a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">
+                                    <a href="{{ route('temp')}}" class="sidebar-link">
                                         <div class="round-16 d-flex align-items-center justify-content-center">
                                             <i class="fa-solid fa-bars"></i>
                                         </div>
@@ -158,6 +158,33 @@
                                 </span>
                                 <span class="hide-menu ps-1">Receipts Voucher</span>
                             </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-trash"></i>
+                                </span>
+                                <span class="hide-menu">Trashed File</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a href="{{ route('clients.trashed') }}" class="sidebar-link">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                        <span class="hide-menu">Clients Trashed</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class='fa-solid fa-file-signature ps-1' style='font-size: 16px'></i>
+                                        </div>
+                                        <span class="hide-menu">Quotation Trashed</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
                         <!-- ============================= -->

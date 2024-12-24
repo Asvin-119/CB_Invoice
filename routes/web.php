@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,5 +40,19 @@ Route::prefix('clients')->group(function () {
     Route::get('/{client}/edit', [ClientController::class, 'edit'])->name('clients.edit');
     Route::put('/{client}/update', [ClientController::class, 'update'])->name('clients.update');
     Route::get('/clients/{client}', [ClientController::class, 'show'])->name('clients.show');
-    Route::delete('/clients/{id}', [ClientController::class, 'destroy'])->name('clients.destroy');
+
+    // Soft delete routes
+    Route::delete('/{client}/delete', [ClientController::class, 'destroy'])->name('clients.delete');
+    Route::get('/trashed', [ClientController::class, 'trashed'])->name('clients.trashed');
+    Route::post('/{client}/restore', [ClientController::class, 'restore'])->name('clients.restore');
 });
+
+Route::get('/temp', [ClientController::class, 'temp'])->name('temp');
+
+// Route::get('/invoices/create', [InvoiceController::class, 'create'])->name('invoices.create');
+// Route::post('/invoices', [InvoiceController::class, 'store'])->name('invoices.store');
+// Route::post('/invoice-settings', [InvoiceController::class, 'updateSettings'])->name('invoice.settings.update');
+
+Route::get('/quotes/create', [QuoteController::class, 'create'])->name('quotes.create');
+Route::post('/quotes', [QuoteController::class, 'store'])->name('quotes.store');
+Route::post('/quote-settings', [QuoteController::class, 'updateSettings'])->name('quote.settings.update');

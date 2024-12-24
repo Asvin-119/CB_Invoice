@@ -23,6 +23,4 @@ class Client extends Model
         'tour_consultant',
         'source',
     ];
-
-    protected $dates = ['deleted_at'];
 }
