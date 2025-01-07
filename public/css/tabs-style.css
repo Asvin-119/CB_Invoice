@@ -1,0 +1,101 @@
+/* Basic styling for the tab menu */
+#quoteTab {
+    border-bottom: 2px solid #dee2e6;
+}
+
+#quoteTab .nav-item .nav-link {
+    border: none;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 14px;
+    color: #6c757d;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+#quoteTab .nav-item .nav-link.active {
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 0.25rem 0.25rem 0 0;
+}
+
+#quoteTab .nav-item .nav-link:hover {
+    color: #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+#quoteTabContent .tab-pane {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hide all tab content */
+}
+
+#quoteTabContent .tab-pane.show {
+    display: block;
+}
+
+#quoteTabContent .tab-pane input[type="text"] {
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.nav-pills .nav-link {
+    color: #007bff;
+    border-radius: 0.25rem;
+}
+
+.nav-pills .nav-link:hover {
+    color: #0056b3;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
+/* Styles for the tab content inputs */
+.form-group label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #495057;
+}
+
+.form-group input[type="text"] {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+    padding: 10px;
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-group input[type="date"] {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+/* Responsive styles for the tab menu */
+@media (max-width: 768px) {
+    .nav-pills .nav-item {
+        margin-bottom: 10px;
+    }
+
+    #quoteTabContent .tab-pane {
+        padding: 15px;
+    }
+}

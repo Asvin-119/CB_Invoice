@@ -125,7 +125,7 @@
                             </a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item">
-                                    <a href="{{ route('temp')}}" class="sidebar-link">
+                                    <a href="{{ route('quotes.index')}}" class="sidebar-link">
                                         <div class="round-16 d-flex align-items-center justify-content-center">
                                             <i class="fa-solid fa-bars"></i>
                                         </div>
@@ -133,7 +133,7 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">
+                                    <a href="{{ route('quotes.create')}}" class="sidebar-link">
                                         <div class="round-16 d-flex align-items-center justify-content-center">
                                             <i class='fa-solid fa-file-signature ps-1' style='font-size: 16px'></i>
                                         </div>

@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class InvoiceSetting extends Model
+class FoodType extends Model
 {
     use HasFactory;
 
-    protected $table = 'invoice_settings';
+    protected $table = 'food_types';
 
     protected $fillable = [
-        'prefix',
-        'next_number',
-        'auto_generate',
+        'food_type',
     ];
 }

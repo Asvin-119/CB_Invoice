@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('invoice_settings', function (Blueprint $table) {
+        Schema::create('meals', function (Blueprint $table) {
             $table->id();
-            $table->string('prefix')->default('INV-');
-            $table->integer('next_number')->default(1);
-            $table->boolean('auto_generate')->default(true);
+            $table->string('meals_name');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('invoice_settings');
+        Schema::dropIfExists('meals');
     }
 };

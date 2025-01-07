@@ -1,27 +1,46 @@
-/* Example Custom CSS for Dropdown and Form Styling */
-.search-container {
-    padding: 10px;
+/* Style for the tab menu (nav) */
+#quoteTab {
+    border: 1px solid #ddd; /* Outline color */
+    border-radius: 5px 5px 0 0; /* Rounded corners on top */
+    margin-bottom: 1rem; /* Space between nav and content */
 }
 
-.search-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+/* Style for active tab */
+#quoteTab .nav-link.active {
+    background-color: #007bff; /* Active tab background color */
+    color: #fff; /* Active tab text color */
+    border-color: #007bff; /* Border color for active tab */
 }
 
-.circle-image {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #ccc;
-    display: inline-block;
-    text-align: center;
-    line-height: 30px;
-    color: #fff;
+/* Style for the tabs */
+#quoteTab .nav-link {
+    color: #007bff; /* Tab text color */
+    border: none; /* Remove border */
+    border-radius: 0; /* Remove border radius */
+    padding: 0.5rem 1rem; /* Tab padding */
 }
 
-.dropdown-menu {
-    max-height: 300px;
-    overflow-y: auto;
+/* Add line under the nav (like an hr) */
+#quoteTab {
+    border-bottom: 2px solid #ddd; /* Line under nav */
+}
+
+/* Style for inactive tabs */
+#quoteTab .nav-link:not(.active) {
+    background-color: transparent; /* Transparent background for inactive tabs */
+    color: #6c757d; /* Inactive tab text color */
+    border-bottom: 2px solid transparent; /* Remove underline from inactive tabs */
+}
+
+/* Hover effect for tabs */
+#quoteTab .nav-link:hover {
+    background-color: #f1f1f1; /* Hover background color */
+    color: #007bff; /* Hover text color */
+}
+
+/* Style for the tab content */
+.tab-content {
+    border: 1px solid #ddd; /* Border around the content */
+    border-radius: 0 0 5px 5px; /* Rounded corners on bottom */
+    padding: 1rem;
 }

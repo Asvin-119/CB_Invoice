@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('quotes', function (Blueprint $table) {
+        Schema::create('hotel_locations', function (Blueprint $table) {
             $table->id();
-            $table->string('quote_number');
+            $table->string('hotel_location');
+            $table->string('hotel_name');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('quotes');
+        Schema::dropIfExists('hotel_locations');
     }
 };

@@ -83,7 +83,7 @@ class ClientController extends Controller
         // Save client data
         Client::create($data);
 
-        return redirect()->route('clients.create')->with('success', 'Client added successfully!');
+        return redirect()->back()->with('success', 'Client added successfully!');
     }
 
     public function show($id)
@@ -134,10 +134,10 @@ class ClientController extends Controller
         return response()->json($clients);
     }
 
-    public function temp()
-    {
-        $clients = Client::all();
-        return view('partials._quotation.quotation', compact('clients'));
-    }
+    // public function temp()
+    // {
+    //     $clients = Client::all();
+    //     return view('partials._quotation.quotation', compact('clients'));
+    // }
 
 }
